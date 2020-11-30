@@ -8,7 +8,7 @@ controller.get('/fizzbuzz/:num', async (req, res) => {
     if (req.params.num <= 0) {
       return res.status(400).send('Please insert a number bigger than 0!');
     }
-    const result = fizzbuzz(req.params.num);
+    const result = fizzbuzz(Number(req.params.num));
     return res.json(result);
   }
   return res.status(400).send('Please insert a number!')
